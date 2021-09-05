@@ -1,0 +1,52 @@
+2021-08-30 20:30:37.361 | ERROR    | main:bake:54 - [{'level': 2, 'delegate': 'tz1azKk3gBJRjW11JAh8J1CBP1tF2NUu5yJ3', 'priority': 0, 'estimated_time': '2021-08-30T15:40:23Z'}, {'level': 2, 'delegate': 'tz1ZrWi7V8tu3tVepAQVAEt8jgLz4VVEEf7m', 'priority': 1, 'estimated_time': '2021-08-30T15:40:23Z'}, {'level': 2, 'delegate': 'tz1iPFr4obPeSzknBPud8uWXZC7j5gKoah8d', 'priority': 2, 'estimated_time': '2021-08-30T15:40:23Z'}, {'level': 2, 'delegate': 'tz1PMqV7qGgWMNH2HR9inWjSvf3NwtHg7Xg4', 'priority': 3, 'estimated_time': '2021-08-30T15:40:23Z'}, {'level': 2, 'delegate': 'tz1MT1ZfNoDXzWvUj4zJg8cVq7tt7a6QcC58', 'priority': 5, 'estimated_time': '2021-08-30T15:40:23Z'}, {'level': 2, 'delegate': 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb', 'priority': 12, 'estimated_time': '2021-08-30T15:40:23Z'}, {'level': 2, 'delegate': 'tz1Q3eT3kwr1hfvK49HK8YqPadNXzxdxnE7u', 'priority': 14, 'estimated_time': '2021-08-30T15:40:23Z'}, {'level': 2, 'delegate': 'tz1VWU45MQ7nxu5PGgWxgDePemev6bUDNGZ2', 'priority': 36, 'estimated_time': '2021-08-30T15:40:23Z'}]
+2021-08-30 20:40:07.056 | ERROR    | main:endorse:38 - [{'level': 1, 'delegate': 'tz1iPFr4obPeSzknBPud8uWXZC7j5gKoah8d', 'slots': [12, 20, 22, 25, 34, 37, 45, 46, 57, 81, 99, 104, 106, 129, 130, 131, 135, 144, 160, 161, 168, 175, 178, 187, 188, 203, 214, 222, 234, 237, 253], 'estimated_time': '2021-08-30T15:40:23Z'}, {'level': 1, 'delegate': 'tz1azKk3gBJRjW11JAh8J1CBP1tF2NUu5yJ3', 'slots': [7, 9, 14, 18, 26, 39, 50, 53, 56, 59, 72, 76, 79, 93, 96, 103, 122, 137, 145, 149, 155, 163, 165, 190, 200, 212, 219, 221, 224, 226, 227, 230, 233, 242, 243, 248], 'estimated_time': '2021-08-30T15:40:23Z'}, {'level': 1, 'delegate': 'tz1ZrWi7V8tu3tVepAQVAEt8jgLz4VVEEf7m', 'slots': [5, 13, 19, 21, 29, 30, 36, 38, 43, 68, 73, 88, 89, 92, 107, 114, 121, 127, 133, 140, 146, 148, 159, 166, 174, 179, 182, 186, 197, 208, 228, 231, 236, 240, 244, 245, 252], 'estimated_time': '2021-08-30T15:40:23Z'}, {'level': 1, 'delegate': 'tz1VWU45MQ7nxu5PGgWxgDePemev6bUDNGZ2', 'slots': [6, 24, 31, 40, 48, 61, 66, 71, 83, 90, 94, 95, 102, 110, 115, 120, 142, 150, 194, 204, 207, 213], 'estimated_time': '2021-08-30T15:40:23Z'}, {'level': 1, 'delegate': 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb', 'slots': [3, 8, 15, 33, 42, 54, 58, 62, 63, 84, 87, 91, 100, 108, 111, 117, 124, 125, 128, 132, 139, 143, 151, 153, 157, 162, 164, 171, 173, 177, 192, 209, 210, 216, 217, 220, 229, 235, 238, 250, 254], 'estimated_time': '2021-08-30T15:40:23Z'}, {'level': 1, 'delegate': 'tz1Q3eT3kwr1hfvK49HK8YqPadNXzxdxnE7u', 'slots': [0, 4, 16, 44, 49, 55, 64, 74, 80, 86, 98, 101, 113, 116, 118, 126, 136, 181, 195, 225, 241, 255], 'estimated_time': '2021-08-30T15:40:23Z'}, {'level': 1, 'delegate': 'tz1PMqV7qGgWMNH2HR9inWjSvf3NwtHg7Xg4', 'slots': [1, 10, 17, 27, 32, 41, 67, 75, 78, 82, 105, 123, 141, 152, 154, 158, 167, 172, 176, 183, 185, 191, 193, 196, 199, 201, 215, 223, 232, 239, 246, 249], 'estimated_time': '2021-08-30T15:40:23Z'}, {'level': 1, 'delegate': 'tz1MT1ZfNoDXzWvUj4zJg8cVq7tt7a6QcC58', 'slots': [2, 11, 23, 28, 35, 47, 51, 52, 60, 65, 69, 70, 77, 85, 97, 109, 112, 119, 134, 138, 147, 156, 169, 170, 180, 184, 189, 198, 202, 205, 206, 211, 218, 247, 251], 'estimated_time': '2021-08-30T15:40:23Z'}]
+2021-08-30 20:40:07.090 | ERROR    | main:endorse:47 - <pytezos.operation.group.OperationGroup object at 0x7f36d3fb1070>
+
+Properties
+.key		tz1Q3eT3kwr1hfvK49HK8YqPadNXzxdxnE7u
+.shell		['http://localhost:20001']
+.block_id	head
+
+Payload
+{'branch': 'BLfDFrWNn1o5srsEkK7phwkRGjCwHnNTRUU3KmzHLe17x7TKMcb',
+ 'contents': [{'endorsement': {'branch': 'BLfDFrWNn1o5srsEkK7phwkRGjCwHnNTRUU3KmzHLe17x7TKMcb',
+                               'operations': {'kind': 'endorsement',
+                                              'level': 1},
+                               'signature': 'sigkHVeVf8nD8pZEshDr9U9SH1CoxjAAXcR4e3eGbyXa1Ejbh7ZMYu3zHVRiiSufvFm8k94wsoyDPNPR4WxDL7fTPnPLp6kq'},
+               'kind': 'endorsement_with_slot',
+               'slot': 0}],
+ 'protocol': 'Ps9mPmXaRzmzk35gbAYNCAw6UXdE2qoABTHbN2oEEc1qM7CwT9P',
+ 'signature': None}
+
+Helpers
+.activate_account()
+.autofill()
+.ballot()
+.binary_payload()
+.delegation()
+.double_baking_evidence()
+.double_endorsement_evidence()
+.endorsement()
+.endorsement_with_slot()
+.failing_noop()
+.fill()
+.forge()
+.hash()
+.inject()
+.json_payload()
+.message()
+.operation()
+.origination()
+.preapply()
+.proposals()
+.result()
+.reveal()
+.run()
+.run_operation()
+.seed_nonce_revelation()
+.send()
+.send_async()
+.sign()
+.transaction()
+.with_slot()
+2021-08-30 20:40:07.095 | ERROR    | main:endorse:49 - block {'chain_id': 'NetXfpUfwJdBox9', 'hash': 'op1TREYgmECsGEUsYTE8M786yHM89o16A2YiQJVk8PagYYDy1Hp', 'protocol': 'Ps9mPmXaRzmzk35gbAYNCAw6UXdE2qoABTHbN2oEEc1qM7CwT9P', 'branch': 'BLfDFrWNn1o5srsEkK7phwkRGjCwHnNTRUU3KmzHLe17x7TKMcb', 'contents': [{'kind': 'endorsement_with_slot', 'endorsement': {'branch': 'BLfDFrWNn1o5srsEkK7phwkRGjCwHnNTRUU3KmzHLe17x7TKMcb', 'operations': {'kind': 'endorsement', 'level': 1}, 'signature': 'sigkHVeVf8nD8pZEshDr9U9SH1CoxjAAXcR4e3eGbyXa1Ejbh7ZMYu3zHVRiiSufvFm8k94wsoyDPNPR4WxDL7fTPnPLp6kq'}, 'slot': 0}], 'signature': None} endorsed by tz1Q3eT3kwr1hfvK49HK8YqPadNXzxdxnE7u

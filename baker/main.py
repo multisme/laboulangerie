@@ -1,15 +1,23 @@
+import sys
+from time import time
+
 from typing import Optional
 
 from fastapi import FastAPI, Request
+from loguru import logger
 from pytezos import pytezos
 
 app = FastAPI()
 
-
 client = pytezos.using(
-    shell="http://localhost:20001",
+    shell="http://localhost:20000",
     key="edpkvGfYw3LyB1UcCahKQk4rF2tvbMUk8GFiTuMjL75uGXrpvKXhjn"
 )
+
+logger.add("tests/file_{time}.log", level='DEBUG')
+logger.add(sys.stderr, level="DEBUG")
+logger.add(sys.stdout, level="DEBUG")
+logger = logger.opt(colors=True)
 
 keys = {
     'tz1MT1ZfNoDXzWvUj4zJg8cVq7tt7a6QcC58': 'edsk3Q3uoz73R7a2GoKHncLZMGD14rKydkiypCvrN3iXk3Ufmx6ZtR',
@@ -24,26 +32,58 @@ keys = {
     'tz1iPFr4obPeSzknBPud8uWXZC7j5gKoah8d': 'edsk36su9hdbfCCpJnDdCsQVs4JSbf7DcmPbeRBhpZznzEcX5gPRpP'
 }
 
+
 def endorse():
     endorsing_rights = client.shell.blocks['head'].helpers.endorsing_rights()
+    logger.error(f"{endorsing_rights}")
     endorser_key_hash = sorted(endorsing_rights, key=lambda endorser: endorser['slots'])[0]['delegate']
     level = client.shell.blocks['head'].header.shell()['level']
-    res = client.using(key=keys[endorser_key_hash]).endorsement(level).fill(ttl=60).sign().with_slot().inject()
-    print(f"block {res} endorsed by {endorser_key_hash}")
+    timestamp = int(time())
+    operation = client.using(
+        key=keys[endorser_key_hash]
+    ).endorsement(level).fill(
+        ttl=60, timestamp=timestamp
+    ).sign().with_slot()
+    logger.error(f"{operation}")
+    res = operation.inject()
+    logger.error(f"block {res} endorsed by {endorser_key_hash}")
+
 
 def bake():
     baking_rights = client.shell.blocks['head'].helpers.baking_rights()
+    logger.error(f"{baking_rights}")
     baker_key_hash = sorted(baking_rights, key=lambda baker: baker['priority'])[0]['delegate']
-    res = client.using(key=keys[baker_key_hash]).bake_block().fill().work().sign().inject()
-    print(f"block {res} baked by {baker_key_hash}")
+    timestamp = int(time())
+    operation = client.using(
+        key=keys[baker_key_hash]
+    )
+    logger.error(timestamp)
+    logger.error(client.shell.blocks['head'].helpers.baking_rights())
+    operation = operation.bake_block()
+    operation= operation.fill(
+        timestamp=timestamp
+    )
+    operation = operation.work()
+    operation = operation.sign()
+    logger.error(f"{operation}")
+    res = operation.inject()
+    logger.error(f"block {res} baked by {baker_key_hash}")
 
 
 @app.get("/mirror")
 def root(request: Request):
+    logger.error("baker get was received")
     return
 
-import time
+
 @app.post("/mirror")
 def auto_bake():
+    logger.error("baker post was received")
     endorse()
     bake()
+
+
+@app.get('/')
+def catch_all():
+    logger.error('all catch all')
+    return "hey"

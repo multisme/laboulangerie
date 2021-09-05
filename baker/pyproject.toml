@@ -5,9 +5,10 @@ description = ""
 authors = ["multi prise <korokoko.toi@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
-pytezos = "^3.2.4"
 fastapi = "^0.66.0"
+loguru = "^0.5.3"
+pytezos = "^3.2.11"
+python = "^3.7"
 uvicorn = "^0.14.0"
 
 [tool.poetry.dev-dependencies]

@@ -1,0 +1,24 @@
+version: '3'
+services:
+  nginx: 
+    image: nginx:latest
+    container_name: oven_nginx
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 20000:20000
+
+  tezos_sandbox:
+    image: registry.gitlab.com/tezos/flextesa:master-run
+    container_name: oven_tezos_sandbox
+    command: sh /usr/bin/test_sandbox start 
+    volumes:
+      - ./sandbox/test_sandbox.sh:/usr/bin/test_sandbox
+    ports:
+      - "20000"
+
+  baker:
+    build: ./baker
+    container_name: oven_baker
+    ports:
+      - "8000"

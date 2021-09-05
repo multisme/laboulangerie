@@ -1,6 +1,6 @@
 #! /bin/sh
 
-default_protocol=Florence
+default_protocol=Granada
 
 all_commands="
 * usage | help | --help | -h: Display this help message."
@@ -18,7 +18,7 @@ $all_commands
 EOF
 }
 
-time_bb=${block_time:-5}
+time_bb=${block_time:1}
 
 export alice="$(flextesa key alice)"
 
